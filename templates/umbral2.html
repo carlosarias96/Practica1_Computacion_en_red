@@ -1,0 +1,36 @@
+{% extends "layout2.html" %}
+{% block content %}
+  <form action="umbral" method="post">
+  <div class="jumbo">
+    <h2>Introduzca el numero de clics umbral que desee</h2>
+    <h3>
+      <b>Umbral &nbsp;&nbsp;</b>
+      <input type="float" name="Umbral" id="Umbral" maxlength="5" placeholder="{{umbral}}"/>
+      <b>&nbsp;&nbsp;</b>
+      <input type="submit" value="Enviar" style="height: 30px; width: 80px; font-size: 16px;">
+    <h3>
+  </div>
+  <div class="jumbo">
+    <h3>Los utlimos {{veces}} elementos que han superado el umbral son:<h3>
+    <h3>
+    <table align="center" vertical-align="center" border="5" border-color="#000033">
+      <tbody>
+        <th>Meneos</th>
+        <th>Titulo</th>
+        <th>Hora</th>
+        <th>Fecha</th>
+        {% for valor in longitud %}
+        <tr>
+          <th>{{pasan[4*valor]}}</th>
+          <th>{{pasan[4*valor+1]}}</th>
+          <th>{{pasan[4*valor+2]}}</th>
+          <th>{{pasan[4*valor+3]}}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h3>
+  </div>
+  </form>
+{% endblock %}
+

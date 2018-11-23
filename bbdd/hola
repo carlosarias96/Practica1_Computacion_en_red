@@ -1,0 +1,25 @@
+class Practica:
+	def __init__(self, clics, meneos,titulo,hora,dia):
+		self.clics=clics
+		self.meneos=meneos
+		self.titulo=titulo
+		self.hora=hora
+		self.dia=dia
+	def toDBCollection (self):
+		return{
+		     "clics":self.clics,
+		     "meneos":self.meneos,
+		     "titulo":self.titulo,
+		     "hora":self.hora,
+		     "dia":self.dia
+		}
+	def __str__(self):
+		return "clics: %d - meneos: %d - titulo: %s - hora: %H:%M:%S - dia: %d/%m/%y "\
+		       %(self.clics,self.meneos,self.titulo,self.hora,self.dia)
+
+practica=datos
+mongoClient= MongoClient('localhost',27017)
+db=mongoClient.practica1
+collection=db.Practica
+for practica in Practica:
+    collection.insert(practica.toDBCollection())

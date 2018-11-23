@@ -1,0 +1,32 @@
+{% extends "layout2.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Seccion para mostar la pagina principal<h2>
+    <h2>
+    <table align="center" vertical-align="center" border="5" border-color="#000033">
+      <tbody>
+        <th>Clics</th>
+        <th>Meneos</th>
+        <th>Titulo</th>
+        <th>Hora</th>
+        <th>Fecha</th>
+        <tr>
+          <th>{{Datos[0]}}</th>
+          <th>{{Datos[1]}}</th>
+          <th>{{Datos[2]}}</th>
+          <th>{{Datos[3]}}</th>
+          <th>{{Datos[4]}}</th>
+        </tr>
+      </tbody>
+    </table>
+    <h2>
+  </div>
+  <form action=" " method ="post">
+  <div class="jumbo">
+    <h3>
+      <b> Visualizacion de graficas &nbsp;&nbsp;&nbsp;</b>
+      <input type="submit" name="Beebotte" class="boton" value="Graficas externas">
+    <h3>
+  </div>
+  </form>
+{% endblock %}
